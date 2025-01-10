@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Akandwanaho - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #F0F8FF; /* Light blue background for a fresh look */
+        }
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+        }
+        .skill, .project-card {
+            transition: all 0.3s ease;
+        }
+        .skill:hover, .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .project-card {
+            background: #E6E6FA; /* Lavender for project cards */
+        }
+        .btn-custom {
+            background-color: #4B0082; /* Indigo for buttons */
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #6A5ACD; /* Slate Blue on hover */
+        }
+        .social-icons a {
+            color: #000;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        .social-icons a:hover {
+            color: #4B0082;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="joseph.jpg">Joseph Akandwanaho</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hosted-apps">Hosted Apps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="py-5 text-center">
+        <div class="container">
+            <img src="joseph.jpg" alt="Joseph Akandwanaho" class="profile-picture">
+            <h1 class="display-5">Joseph Akandwanaho</h1>
+            <p class="lead">Full-Stack Developer | Content Creator</p>
+            <p><a href="tel:+256756884382">+256756884382</a> | <a href="mailto:jakandwanaho2@gmail.com">jakandwanaho2@gmail.com</a></p>
+            <a href="#projects" class="btn btn-custom mt-3">View My Projects</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Experienced in web and content development, I specialize in creating impactful solutions for education and health sectors, with a focus on AI and machine learning. I also manage and brand social media Accounts creating relevant content which impact the society.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4 skill">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 skill">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Content Creation</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4 skill">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">AI and machine learning </h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <div class="col-md-4 mb-4 skill">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">communication skills</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more skills here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2>Work Experience</h2>
+
+           
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Web Developer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Self-employed | 2023 - Present</h6>
+                    <p class="card-text">  I have had the opportunity to work on a wide range of projects, from developing
+                         custom websites to creating web applications tailored to clients' needs. I specialize in 
+                         front-end development using HTML, CSS, and JavaScript, as well as back-end development with PHP. My work focuses
+                          on delivering responsive, user-friendly websites that prioritize performance and functionality. I collaborate
+                           closely with clients to understand their goals and provide them with solutions that meet their business or
+                            personal requirements. Through my experience, I've honed my skills in project management, problem-solving, 
+                            and delivering high-quality web solutions on time."</p>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Content Developer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Freelance | 2023 - Present</h6>
+                    <p class="card-text">  I  produce engaging written and visual content across various platforms.
+                         My work includes writing articles, blogs, and social media posts, as well as recording and editing captivating videos.
+                          I focus on creating content that resonates with the target audience, using clear communication and creativity.
+                           My video production skills include scripting, shooting, and editing to ensure high-quality content that is both informative and visually appealing. 
+                           I also optimize written content for SEO and ensure videos are tailored for maximum engagement. 
+                           Throughout my freelance career, I’ve developed a strong understanding of content strategy, video production, 
+                           and meeting client expectations while adhering to deadlines."</p>
+                </div>
+            </div>
+            <!-- Add your previous experience here -->
+
+
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Computer Technician </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Mbarara University Of science and Technology | 2023 - Present</h6>
+                    <p class="card-text"> I am responsible for ensuring that the lab’s computer systems are up and running smoothly, providing technical support to students and staff,
+                         and maintaining the lab’s hardware and software resources. I troubleshoot any issues that arise, 
+                         set up new systems, and ensure that all software is up to date. My duties also include managing 
+                         the lab's inventory, installing software, and ensuring network security. I take pride in creating an environment 
+                         where users can access reliable technology, enabling them to focus on their studies and projects without technical
+                          interruptions</p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card project-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Online Shopping Web Application </h5>
+                            <p class="card-text">  created a platform where users can browse, search, and purchase products online. It aims to provide a convenient and user-friendly shopping experience for customers while also offering
+                                 efficient management tools for administrators to manage products, orders, and users.
+                                  orther goals of the project included <br> User Registration and Authentication: <br> Allowing users to create accounts and log in securely.</p>
+                            <a href="https://github.com/mcjose256/online-shopping" class="btn btn-custom">GitHub</a>
+                            <!--<a href="link-to-hosted-app" class="btn btn-custom">View App</a>-->
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more project cards here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="hosted-apps" class="py-5 bg-light">
+        <div class="container">
+            <h2>Hosted Applications</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">SADA NEWS LIVE </h5>
+                            <p class="card-text">A comprehensive web app that  provides current news and content tailored to engage reader
+                                and keep them informed on the latest news and events. The app is built using HTML, CSS, JavaScript, and Bootstrap.
+                            </p>
+                            <a href="https://github.com/mcjose256/myblog" class="btn btn-custom">GitHub</a>
+                            <a href="#" class="btn btn-custom">Visit App</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more hosted apps here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Bachelor of Science in Computer Science</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Mbarara University of Science and Technology (MUST), Uganda</h6>
+                    <p class="card-text">Expected Graduation: October 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership" class="py-5 bg-light">
+        <div class="container">
+            <h2>Leadership & Extracurricular</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Minister for Justice and Constitutional Affairs</strong> - MUST Students' Guild | September 2024 – Present</li>
+                <li class="list-group-item">Member, Poetry Club and Chess Club, MUST</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2>Contact Me</h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/akandwanaho-joseph-70333b312/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://x.com/AkandwanahoJose" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-tiktok"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+            </div>
+            <a href="mailto:jakandwanaho2@gmail.com" class="btn btn-custom mt-3">Email Me</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
