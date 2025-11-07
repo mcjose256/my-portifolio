@@ -4,10 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            target.scrollIntoView({ behavior: 'smooth' });
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            // Calculate the offset for fixed navbar
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const offsetPosition = targetElement.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+
+            // Close the navbar on mobile after clicking a link
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
         });
     });
 
-// Additional interactivity can be added here, like modals for project details or dynamic content loading
+// You can add more interactivity here
 });
