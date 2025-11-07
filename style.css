@@ -1,1 +1,611 @@
+/* --- Root Variables for consistent theming --- */
+:root {
+    --primary-bg: #F0F8FF;        /* Light blue background for main sections - ALICE BLUE */
+    --secondary-bg: #e0e8f0;      /* Slightly darker light blue for alternating sections */
+    --card-bg: #ffffff;           /* White background for cards */
+    --accent-color: #e53935;      /* Your professional red accent */
+    --text-dark: #333333;         /* Dark text for readability on light background */
+    --text-grey: #666666;         /* Secondary grey text */
+    --link-hover-color: #000000;  /* Darker color for link hover */
 
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* --- General Body and Typography --- */
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--primary-bg);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.5em; /* Large heading for hero */
+    margin-bottom: 10px;
+    line-height: 1.1;
+    color: var(--text-dark); /* Ensure h1 in home section is dark */
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Specific styling for section indicators like "About me" */
+.section-indicator {
+    font-family: var(--font-heading);
+    color: var(--accent-color); /* Red color for "About me" etc. */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: flex; /* To allow pseudo-elements for the dot */
+    align-items: center;
+}
+
+.section-indicator::before {
+    content: '•'; /* Dot before text */
+    font-size: 1.5em;
+    line-height: 0;
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+
+p {
+    color: var(--text-grey); /* Default paragraph text is grey */
+}
+
+.lead-tagline {
+    font-size: 1.3em;
+    color: var(--text-grey);
+    margin-bottom: 30px;
+}
+
+
+/* --- Navbar Styling --- */
+.navbar {
+    background-color: var(--card-bg) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--accent-color) !important;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-dark) !important;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-link:hover::after {
+    width: 60%;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* --- Section Backgrounds --- */
+section {
+    padding: 80px 0;
+    background-color: var(--primary-bg);
+}
+
+section:nth-of-type(even):not(.hero-section) { /* Exclude hero, apply to others */
+    background-color: var(--secondary-bg);
+}
+
+/* --- Hero Section - Styling to match example --- */
+.hero-section {
+    padding: 100px 0; /* Adjust padding for height */
+    background-color: var(--secondary-bg); /* Use darker light blue for hero background */
+    min-height: 100vh; /* Make it full viewport height */
+    display: flex;
+    align-items: center;
+}
+
+.hero-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    text-align: left; /* Align text to left */
+}
+
+.hero-text-content {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+    padding-right: 40px; /* Space from image */
+}
+
+.hero-text-content .greeting {
+    color: var(--accent-color); /* Red color for "Hello, My Name Is" */
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-image-display {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center;
+}
+
+.profile-image {
+    width: 80%; /* Adjust size as needed */
+    max-width: 400px;
+    border-radius: 5px; /* Subtle roundness */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Shadow for lighter theme */
+    border: 3px solid var(--accent-color); /* Red border like in the example */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(229, 57, 53, 0.3);
+}
+
+/* --- About Section - Styling to match example --- */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--primary-bg); /* Use primary light blue for about */
+}
+
+.about-content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Align top of content */
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.about-image-display {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text-content {
+    flex: 2; /* Takes more space than image */
+    min-width: 300px;
+    padding-left: 20px; /* Space from image */
+}
+
+.about-text-content h2 {
+    text-align: left; /* Override section h2 global alignment */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-text-content h2::after {
+    left: 0; /* Align underline to left */
+    transform: translateX(0);
+}
+
+/* --- Contact Icons with Hover CTA (IMPROVED) --- */
+.contact-icons-hero,
+.quick-contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.contact-icon-wrapper {
+    display: inline-block;
+    position: relative;
+    margin: 10px 15px;
+}
+
+.contact-icon {
+    font-size: 52px;
+    color: var(--accent-color);
+    padding: 15px;
+    transition: all 0.3s ease;
+    display: block;
+    text-decoration: none;
+}
+
+.contact-icon:hover {
+    transform: scale(1.15);
+    color: var(--link-hover-color);
+    filter: drop-shadow(0 5px 10px rgba(229, 57, 53, 0.3));
+}
+
+.cta-text {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    bottom: -10px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon-wrapper:hover .cta-text {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* --- Custom Buttons --- */
+.btn-custom {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 0.9em;
+    background-color: var(--accent-color);
+    color: #ffffff !important;
+    border: 2px solid var(--accent-color);
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background-color: transparent;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-secondary-custom {
+    background-color: transparent;
+    color: var(--text-dark) !important;
+    border: 2px solid var(--text-grey);
+}
+
+.btn-secondary-custom:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color) !important;
+    background-color: transparent;
+    transform: translateY(-2px);
+}
+
+/* --- Social Icons (Footer) --- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 28px;
+    color: var(--text-grey);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--accent-color);
+}
+
+/* --- Cards Styling (Skills, Experience, Projects, Hosted Apps) --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    color: var(--accent-color);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.card-subtitle {
+    color: var(--text-grey) !important;
+}
+
+.card-text {
+    color: var(--text-grey);
+}
+
+.progress {
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--accent-color) !important;
+    transition: width 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.project-card .btn-custom, 
+.project-card .btn-secondary-custom {
+    margin-top: 15px;
+}
+
+.list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text-grey);
+    border-color: rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: var(--secondary-bg);
+}
+
+.list-group-item strong {
+    color: var(--text-dark);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--card-bg);
+    color: var(--text-grey);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.footer-content p {
+    margin-bottom: 0;
+}
+
+/* --- Smooth Scrolling --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Accessibility Improvements --- */
+a:focus,
+button:focus,
+.btn-custom:focus,
+.nav-link:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* --- Loading Animation for Images --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-image {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) { /* Adjust for larger tablets/laptops */
+    .hero-content-wrapper, 
+    .about-content-wrapper {
+        flex-direction: column; /* Stack columns */
+        text-align: center; /* Center text */
+    }
+    
+    .hero-text-content, 
+    .about-text-content {
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 40px; /* Space between text and image when stacked */
+    }
+    
+    .hero-image-display, 
+    .about-image-display {
+        order: -1; /* Move image above text */
+        margin-bottom: 40px;
+    }
+    
+    .hero-text-content h1 {
+        font-size: 2.8em;
+    }
+    
+    .hero-text-content .lead-tagline {
+        font-size: 1.1em;
+    }
+    
+    .about-text-content h2 {
+        text-align: center; /* Center "Who Am I" */
+    }
+    
+    .about-text-content h2::after {
+        left: 50%; /* Center underline */
+        transform: translateX(-50%);
+    }
+
+    .contact-icons-hero,
+    .quick-contact-icons {
+        justify-content: center;
+    }
+
+    .contact-icon {
+        font-size: 45px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .hero-text-content h1 {
+        font-size: 2.2em;
+    }
+
+    .contact-icon {
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    .cta-text {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .profile-image {
+        width: 90%;
+    }
+
+    .btn-custom {
+        padding: 12px 25px;
+        font-size: 0.85em;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text-content h1 {
+        font-size: 1.8em;
+    }
+
+    .lead-tagline {
+        font-size: 1em;
+    }
+
+    .contact-icon {
+        font-size: 35px;
+        padding: 8px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+}
+
+/* --- Print Styles --- */
+@media print {
+    .navbar,
+    footer,
+    .btn-custom,
+    .contact-icons-hero,
+    .quick-contact-icons {
+        display: none;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    body {
+        background-color: white;
+    }
+}
